@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.HomeFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:background="@drawable/bg_dashboard_header"
+            android:elevation="@dimen/_5sdp"
+            android:outlineAmbientShadowColor="@color/colorPrimary"
+            android:outlineSpotShadowColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/ll_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.27">
+
+                <TextView
+                    android:id="@+id/tv_welcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:text="@string/tv_welcome"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_20ssp" />
+
+                <TextView
+                    android:id="@+id/tv_explore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_minus8sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/tv_explore_amp_manage_inventory"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_notifications"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:src="@drawable/ic_bell_notification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ll_label" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.97" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_sub"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:outlineAmbientShadowColor="@color/colorPrimary"
+            android:outlineSpotShadowColor="@color/colorPrimary"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/cl_header"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/cl_header"
+            app:layout_constraintVertical_bias="0.2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_save"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/iv_save_environment"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_save_environment"
+                        style="@style/poppinsBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autoSizeMaxTextSize="@dimen/_16ssp"
+                        android:autoSizeMinTextSize="@dimen/_12ssp"
+                        android:autoSizeStepGranularity="2sp"
+                        android:autoSizeTextType="uniform"
+                        android:fontFamily="@font/poppinsextrabold"
+                        android:singleLine="true"
+                        android:text="@string/tv_save_environment"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <TextView
+                        android:id="@+id/tv_reducing_food_waste"
+                        style="@style/poppinsRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_11ssp"
+                        tools:text="@string/tv_reducing_food_waste_lowers_co_emissions" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_save_environment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:src="@drawable/ic_save_environment"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_sub">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDashboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_10sdp"
+                app:layout_constraintVertical_chainStyle="spread_inside">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_fridge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:outlineSpotShadowColor="@color/colorPrimary"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="@dimen/_7sdp"
+                    app:layout_constraintEnd_toStartOf="@id/cv_freezer"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingVertical="@dimen/_15sdp">
+
+                        <ImageView
+                            android:id="@+id/iv_fridge"
+                            android:layout_width="30dp"
+                            android:layout_height="38dp"
+                            android:src="@drawable/ic_fridge"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_fridge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:text="@string/tv_fridge"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_fridge" />
+
+                        <TextView
+                            android:id="@+id/tv_fridge_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppinsregular"
+                            android:text="0 items"
+                            android:textColor="@color/neutral_300"
+                            android:textSize="@dimen/_10ssp"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_fridge"
+                            tools:visibility="visible" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_freezer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:outlineSpotShadowColor="@color/colorPrimary"
+                    app:cardCornerRadius="@dimen/_15sdp"
+
+                    app:cardElevation="@dimen/_7sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@id/cv_fridge"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingVertical="@dimen/_15sdp">
+
+                        <ImageView
+                            android:id="@+id/iv_freezer"
+                            android:layout_width="30dp"
+                            android:layout_height="38dp"
+                            android:src="@drawable/ic_freezer"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_freezer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:text="@string/tv_freezer"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_freezer" />
+
+                        <TextView
+                            android:id="@+id/tv_freezer_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppinsregular"
+                            android:text="0 items"
+                            android:textColor="@color/neutral_300"
+                            android:textSize="@dimen/_10ssp"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_freezer"
+                            tools:visibility="visible" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_pantry"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:outlineSpotShadowColor="@color/colorPrimary"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="@dimen/_7sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/cvUnOrganized"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_fridge">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingVertical="@dimen/_15sdp">
+
+                        <ImageView
+                            android:id="@+id/iv_pantry"
+                            android:layout_width="35dp"
+                            android:layout_height="38dp"
+                            android:src="@drawable/ic_pantry"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_pantry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:text="@string/tv_pantry"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_pantry" />
+
+                        <TextView
+                            android:id="@+id/tv_pantry_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppinsregular"
+                            android:text="0 items"
+                            android:textColor="@color/neutral_300"
+                            android:textSize="@dimen/_10ssp"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_pantry"
+                            tools:visibility="visible" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvUnOrganized"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:outlineSpotShadowColor="@color/colorPrimary"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="@dimen/_7sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@id/cv_pantry"
+                    app:layout_constraintTop_toBottomOf="@id/cv_freezer">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingVertical="@dimen/_15sdp">
+
+                        <ImageView
+                            android:id="@+id/iv_unorganized"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:src="@drawable/ic_unorganized"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_unorganized"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:text="@string/tv_unorganized"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_unorganized" />
+
+                        <TextView
+                            android:id="@+id/tv_unorganized_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppinsregular"
+                            android:text="0 items"
+                            android:textColor="@color/neutral_300"
+                            android:textSize="@dimen/_10ssp"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_unorganized"
+                            tools:visibility="visible" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabQR"
+            style="@style/Widget.App.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent700"
+            android:textColor="@color/colorWhite"
+            app:icon="@drawable/ic_qr_code"
+            app:iconSize="50dp"
+            app:iconTint="@color/colorWhite"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loader"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:elevation="@dimen/_20sdp"
+                app:indicatorSize="@dimen/_34sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.6" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
